@@ -9,7 +9,6 @@
 	Hello world!  
 </h1>
 
-<!-- <P>  The time on the server is ${serverTime}. </P>-->
 <P>  USER_SEQ is ${USER_ID}. </P>
 <P>  USER_NAME is ${USER_NAME}. </P>
 </body>
