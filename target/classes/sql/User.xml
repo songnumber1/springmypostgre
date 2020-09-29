@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+<select id="userselect" resultType="com.my.storage.dto.UserDto">     <!-- resultType 본인 환경에 맞게 수정 필요 -->
+	SELECT USER_ID, USER_NAME FROM TB_APP_USER WHERE USER_SEQ = '0xu9n9w9ox176k418dlgq12f2h42tqs461t6'
+</select>
+
+<select id="getParaString" parameterType="String" resultType="com.my.storage.dto.UserDto">
+	SELECT USER_ID, USER_NAME FROM TB_APP_USER WHERE USER_SEQ = #{in_user_seq}	
+</select>
+
+<select id="getParamterMap" parameterType="java.util.Map" resultType="com.my.storage.dto.UserDto">
+	SELECT USER_ID, USER_NAME FROM TB_APP_USER WHERE USER_SEQ = #{in_user_seq,mode=IN,jdbcType=VARCHAR}	
+</select>
+
+<select id="getParamterVO" parameterType="com.my.storage.vo.userVO" resultType="com.my.storage.dto.UserDto">
+	SELECT USER_ID, USER_NAME FROM TB_APP_USER WHERE USER_SEQ = #{in_user_seq}
+</select>
+
+<select id="CallProcedure" parameterType="java.util.Map" resultType="String"  statementType="CALLABLE">
+	SELECT mybatis_test (#{in_user_seq}) 
+</select>
+</mapper> 
