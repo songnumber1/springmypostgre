@@ -116,4 +116,9 @@ public class HomeController {
 		
 		return "select";
 	}
+	
+	@RequestMapping(value="/myhome", method = RequestMethod.GET)
+	public String myhome(Model model) {
+		return "myhome";
+	}
 }
